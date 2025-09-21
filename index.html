@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://synth-data-acl.github.io/ -->
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="description" content="Synthetic Data in the Era of LLMs (tutorial at ACL 2025).">
+  <meta name="keywords" content="Synthetic Data, ACL 2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Synthetic Data in the Era of LLMs</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link href="./Synthetic Data in the Era of LLMs_files/css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./Synthetic Data in the Era of LLMs_files/bulma.min.css">
+  <link rel="stylesheet" href="./Synthetic Data in the Era of LLMs_files/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./Synthetic Data in the Era of LLMs_files/bulma-slider.min.css">
+  <link rel="stylesheet" href="./Synthetic Data in the Era of LLMs_files/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./Synthetic Data in the Era of LLMs_files/academicons.min.css">
+  <link rel="stylesheet" href="./Synthetic Data in the Era of LLMs_files/index.css">
+  <link rel="icon" href="https://synth-data-acl.github.io/static/images/favicon.ico">
+
+  <script src="./Synthetic Data in the Era of LLMs_files/jquery.min.js.下载"></script>
+  <script defer="" src="./Synthetic Data in the Era of LLMs_files/fontawesome.all.min.js.下载"></script>
+  <script src="./Synthetic Data in the Era of LLMs_files/bulma-carousel.min.js.下载"></script>
+  <script src="./Synthetic Data in the Era of LLMs_files/bulma-slider.min.js.下载"></script>
+  <script src="./Synthetic Data in the Era of LLMs_files/index.js.下载"></script>
+
+  
+  <style>
+    .presenter-profiles {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4rem;
+      margin-top: 2rem;
+    }
+    
+    .presenter-card {
+      text-align: center;
+      flex: 0 1 150px;
+    }
+    
+    .presenter-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .presenter-image:hover {
+      transform: scale(1.05);
+    }
+    
+    .presenter-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #03a5fc;
+    }
+    
+    .presenter-affiliation {
+      font-size: 1.2rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Trustworthy Machine Reasoning with Foundation Models</h1>
+          <h1 class="title is-4 publication-title">Tutorial at <a href="https://aaai.org/conference/aaai/aaai-26/">AAAI 2026</a>
+          </h1><h1 class="title is-4 publication-title">Singapore</h1>
+
+          <!-- Profile Pictures Section -->
+          <div class="presenter-profiles">
+            <div class="presenter-card">
+              <img src="https://raw.githubusercontent.com/ibizatomorrow/Trustworthy-Machine-Reasoning-with-Foundation-Models/main/img/Bo%20Han.png" alt="Bo Han" class="presenter-image">
+              <a href="https://bhanml.github.io"><div class="presenter-name">Bo Han</div></a>
+              <div class="presenter-affiliation">Hong&nbsp;Kong&nbsp;Baptist<br>University</div>
+            </div>
+            <div class="presenter-card">
+              <img src="https://raw.githubusercontent.com/ibizatomorrow/Trustworthy-Machine-Reasoning-with-Foundation-Models/main/img/Sanmi%20Koyejo.png" alt="Xiang Yue" class="presenter-image">
+              <a href="https://cs.stanford.edu/~sanmi/"><div class="presenter-name">Sanmi Koyejo</div></a>
+              <div class="presenter-affiliation">Stanford University</div>
+            </div>
+            <div class="presenter-card">
+              <img src="https://raw.githubusercontent.com/ibizatomorrow/Trustworthy-Machine-Reasoning-with-Foundation-Models/main/img/Zhanke%20Zhou.png" alt="Alisa Liu" class="presenter-image">
+              <a href="https://andrewzhou924.github.io/"><div class="presenter-name">Zhanke Zhou</div></a>
+              <div class="presenter-affiliation">Hong&nbsp;Kong&nbsp;Baptist<br>University</div>
+            </div>
+            <div class="presenter-card">
+              <img src="https://raw.githubusercontent.com/ibizatomorrow/Trustworthy-Machine-Reasoning-with-Foundation-Models/main/img/Chentao%20Cao.png" alt="Yizhong Wang" class="presenter-image">
+              <a href="https://scholar.google.com/citations?user=vZPl_oQAAAAJ&hl=en"><div class="presenter-name">Chentao Cao</div></a>
+              <div class="presenter-affiliation">Hong&nbsp;Kong&nbsp;Baptist<br>University</div>
+            </div>
+            <div class="presenter-card">
+              <img src="https://raw.githubusercontent.com/ibizatomorrow/Trustworthy-Machine-Reasoning-with-Foundation-Models/main/img/Brando%20Miranda.png" alt="Brando Miranda" class="presenter-image">
+              <a href="https://brando90.github.io/brandomiranda/"><div class="presenter-name">Brando Miranda</div></a>
+              <div class="presenter-affiliation">Stanford University</div>
+            </div>
+            <div class="presenter-card">
+              <img src="https://raw.githubusercontent.com/ibizatomorrow/Trustworthy-Machine-Reasoning-with-Foundation-Models/main/img/Pan%20Lu.png" alt="Brando Miranda" class="presenter-image">
+              <a href="https://lupantech.github.io/"><div class="presenter-name">Pan Lu</div></a>
+              <div class="presenter-affiliation">Stanford University</div>
+            </div>            
+            
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://us06web.zoom.us/rec/play/jLTcNKnh2lMcK63uNpW-9g-P_wUN85RFNLYGzxhL6gCkjqzPIGieJYXdeP_xGGuj6ZxP-nvYpDQQ22k9.9o2qq60z7LHyaMUq" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-camera fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="camera" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 144v288c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48h88l12.3-32.9c7-18.7 24.9-31.1 44.9-31.1h125.5c20 0 37.9 12.4 44.9 31.1L376 96h88c26.5 0 48 21.5 48 48zM376 288c0-66.2-53.8-120-120-120s-120 53.8-120 120 53.8 120 120 120 120-53.8 120-120zm-32 0c0 48.5-39.5 88-88 88s-88-39.5-88-88 39.5-88 88-88 88 39.5 88 88z"></path></svg><!-- <i class="fas fa-camera"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Tutorial Recording</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://synth-data-acl.github.io/static/slides/slides.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-images fa-w-18" aria-hidden="true" focusable="false" data-prefix="far" data-icon="images" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M480 416v16c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V176c0-26.51 21.49-48 48-48h16v48H54a6 6 0 0 0-6 6v244a6 6 0 0 0 6 6h372a6 6 0 0 0 6-6v-10h48zm42-336H150a6 6 0 0 0-6 6v244a6 6 0 0 0 6 6h372a6 6 0 0 0 6-6V86a6 6 0 0 0-6-6zm6-48c26.51 0 48 21.49 48 48v256c0 26.51-21.49 48-48 48H144c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48h384zM264 144c0 22.091-17.909 40-40 40s-40-17.909-40-40 17.909-40 40-40 40 17.909 40 40zm-72 96l39.515-39.515c4.686-4.686 12.284-4.686 16.971 0L288 240l103.515-103.515c4.686-4.686 12.284-4.686 16.971 0L480 208v80H192v-48z"></path></svg><!-- <i class="far fa-images"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Slides</span>
+                </a>
+              </span>
+             <span class="link-block">
+                <a href="https://aclanthology.org/2025.acl-tutorials.7/" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Presenter Biographies</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          In this tutorial, we chart a practical path from raw capability to trustworthy reasoning with foundation models. We begin by motivating why trustworthy reasoning is essential: when models bluff multiplications or invent drug interactions, their value collapses and risks increase. We adopt four pillars of trustworthiness, i.e., capability, safety, robustness, and explainability, as the organizing framework for the entire session.
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+ <!-- Schedule. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Schedule</h2>
+        <div class="content has-text-justified">
+          <p><strong>July 27, 2025 - Hall B</strong></p>
+          <p></p><ul>
+            <li><strong>2:00pm:</strong> How do we <strong>evaluate</strong> data quality? (15 minutes)</li>
+            <li><strong>2:20pm:</strong> How do we <strong>create</strong> high-quality synthetic data? (35 minutes + Q&amp;A)</li>
+            <li><strong>3:05pm:</strong> How do we <strong>use</strong> synthetic data (Pt 1)? (25 minutes)</li>
+            <li><strong>3:30pm:</strong> 30 minute break</li>
+            <li><strong>4:00pm:</strong> How do we <strong>use</strong> synthetic data (Pt 2)? (20 minutes + Q&amp;A)</li>
+            <li><strong>4:25pm:</strong> Scenario-specific <strong>applications</strong> (35 minutes + Q&amp;A)</li>
+            <li><strong>5:00pm:</strong> Limitations and open questions (25 minutes + Q&amp;A)</li>
+            <li><strong>5:30pm:</strong> End</li>
+          </ul><p></p>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Concurrent Work. -->
+    
+    <div class="columns is-centered">
+  <div class="container is-max-desktop">
+    
+    <!-- Abstract. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Bibliography</h2>
+        <div class="content has-text-justified">
+          <p>
+    The papers referenced in the tutorial can be found below.
+          </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/1503.02531" target="_blank">Distilling the Knowledge in a Neural Network</a></strong><br>
+              Hinton et al., 2015
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/1511.06709" target="_blank">Improving Neural Machine Translation Models with Monolingual Data</a></strong><br>
+              Sennrich et al., 2016
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/1606.07947" target="_blank">Sequence-Level Knowledge Distillation</a></strong><br>
+              Kim &amp; Rush, 2016
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/1811.07871" target="_blank">Scalable agent alignment via reward modeling: a research direction</a></strong><br>
+              Leike et al., 2018
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2006.10413" target="_blank">Are Pretrained Language Models Symbolic Reasoners Over Knowledge?</a></strong><br>
+              Kassner et al., 2020
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2004.10964" target="_blank">Don't Stop Pretraining: Adapt Language Models to Domains and Tasks</a></strong><br>
+              Gururangan et al., 2020
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2104.07540" target="_blank">Generating Datasets with Pretrained Language Models</a></strong><br>
+              Schick &amp; Schütze, 2021
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2111.06467" target="_blank">SynthBio: A Case Study in Faster Curation of Text Datasets</a></strong><br>
+              Yuan et al., 2021
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2212.08073" target="_blank">Constitutional AI: Harmlessness from AI Feedback</a></strong><br>
+              Bai et al., 2022
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2202.03286" target="_blank">Red Teaming Language Models with Language Models</a></strong><br>
+              Perez et al., 2022
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2212.10560" target="_blank">Self-Instruct: Aligning Language Models with Self-Generated Instructions</a></strong><br>
+              Wang et al., 2022
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2203.14465" target="_blank">STaR: Bootstrapping Reasoning With Reasoning</a></strong><br>
+              Zelikman et al., 2022
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2212.09689" target="_blank">Unnatural Instructions: Tuning Language Models with (Almost) No Human Labor</a></strong><br>
+              Honovich et al., 2022
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2201.05955" target="_blank">WANLI: Worker and AI Collaboration for Natural Language Inference Dataset Creation</a></strong><br>
+              Liu et al., 2022
+            </p>
+            <p>
+              <strong><a href="https://crfm.stanford.edu/2023/03/13/alpaca.html" target="_blank">Alpaca: A Strong, Replicable Instruction-Following Model</a></strong><br>
+              Taori et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2304.08460" target="_blank">LongForm: Effective Instruction Tuning with Reverse Instructions</a></strong><br>
+              Köksal et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2306.02707" target="_blank">Orca: Progressive Learning from Complex Explanation Traces of GPT-4</a></strong><br>
+              Mukherjee et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2310.08491" target="_blank">Prometheus: Inducing Fine-grained Evaluation Capability in Language Models</a></strong><br>
+              Kim et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2308.12261" target="_blank">Prompt2Model: Generating Deployable Models from Natural Language Instructions</a></strong><br>
+              Viswanathan et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2304.06767" target="_blank">RAFT: Reward rAnked FineTuning for Generative Foundation Model Alignment</a></strong><br>
+              Dong et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2308.06259" target="_blank">Self-Alignment with Instruction Backtranslation</a></strong><br>
+              Li et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2303.17651" target="_blank">Self-Refine: Iterative Refinement with Self-Feedback</a></strong><br>
+              Madaan et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2212.10465" target="_blank">SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization</a></strong><br>
+              Kim et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2305.15717" target="_blank">The False Promise of Imitating Proprietary LLMs</a></strong><br>
+              Gudibande et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2306.11644" target="_blank">Textbooks Are All You Need</a></strong><br>
+              Gunasekar et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2310.01377" target="_blank">UltraFeedback: Boosting Language Models with Scaled AI Feedback</a></strong><br>
+              Cui et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2304.12244" target="_blank">WizardLM: Empowering Large Pre-trained Language Models to Follow Complex Instructions</a></strong><br>
+              Xu et al., 2023
+            </p>
+            <p>
+              <strong><a href="https://www.nature.com/articles/s41586-024-07566-y" target="_blank">AI models collapse when trained on recursively generated data</a></strong><br>
+              Shumailov et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2404.14361" target="_blank">Better Synthetic Data by Retrieving and Transforming Existing Datasets</a></strong><br>
+              Gandhi et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2502.19249" target="_blank">Between Circuits and Chomsky: Pre-pretraining on Formal Languages Imparts Linguistic Biases</a></strong><br>
+              Hu et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2507.18624" target="_blank">Checklists Are Better Than Reward Models For Aligning Language Models</a></strong><br>
+              Viswanathan et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2412.03679" target="_blank">Evaluating Language Models as Synthetic Data Generators</a></strong><br>
+              Kim et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2403.13787" target="_blank">Evaluating Reward Models for Language Modeling</a></strong><br>
+              Lambert et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2410.19133" target="_blank">Hybrid Preferences: Learning to Route Instances for Human vs. AI Feedback</a></strong><br>
+              Miranda et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2405.03548" target="_blank">MAmmoTH2: Scaling Instructions from the Web</a></strong><br>
+              Yue et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2401.16380" target="_blank">Rephrasing the Web: A Recipe for Compute and Data-Efficient Language Modeling</a></strong><br>
+              Maini et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2407.12874" target="_blank">SELF-GUIDE: Better Task-Specific Instruction Following via Self-Synthetic Finetuning</a></strong><br>
+              Zhao et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2409.07431" target="_blank">Synthetic continued pretraining</a></strong><br>
+              Yang et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2409.02098" target="_blank">Synthetic Dataset Generation Through Corpus Retrieval and Augmentation</a></strong><br>
+              Ziegler et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2410.06554" target="_blank">The Accuracy Paradox in RLHF: When Better Reward Models Don't Yield Better Language Models</a></strong><br>
+              Chen et al., 2024
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2503.01067" target="_blank">All Roads Lead to Likelihood: The Value of Reinforcement Learning in Fine-Tuning</a></strong><br>
+              Swamy et al., 2025
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2501.12948" target="_blank">DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL</a></strong><br>
+              Deepseek-AI, 2025
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2505.20161" target="_blank">Prismatic Synthesis: Gradient-based Data Diversification Boosts Generalization in LLM Reasoning</a></strong><br>
+              Jung et al., 2025
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2507.07229" target="_blank">SynthTextEval: Synthetic Text Data Generation and Evaluation for High-Stakes Domains</a></strong><br>
+              Ramesh et al., 2025
+            </p>
+            <p>
+              <strong><a href="https://arxiv.org/abs/2503.15477" target="_blank">What Makes a Reward Model a Good Teacher? An Optimization Perspective</a></strong><br>
+              Razin et al., 2025
+            </p>
+
+        </div>
+      </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</div></section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{synth-data-tutorial,
+    title = "Synthetic Data in the Era of Large Language Models",
+    author = "Viswanathan, Vijay  and
+      Yue, Xiang  and
+      Liu, Alisa  and
+      Wang, Yizhong  and
+      Neubig, Graham",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 5: Tutorial Abstracts)",
+    publisher = "Association for Computational Linguistics",
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://synth-data-acl.github.io/static/videos/nerfies_paper.pdf">
+        <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" disabled="">
+        <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            
+            This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
